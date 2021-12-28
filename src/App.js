@@ -1,7 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+
+import superbase from "./supabase-client";
+import React from "react";
 
 function App() {
+  React.useEffect(() => {
+    superbase.from("countries").select().then(console.log).catch(console.log);
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
